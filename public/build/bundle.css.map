@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "Table.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\texport let stores = [];\n    import { createEventDispatcher } from 'svelte';\n\n\tconst dispatch = createEventDispatcher();\n\n\tfunction sayId(index) {\n\t\tdispatch('message', {\n\t\t\tid: index\n\t\t});\n    }\n</script>\t\n\n    <table>\n\t\t\t<tr>\n                <th>ID</th>\n                <th>Store</th>\n                <th>Address</th>\n            </tr>\n\t\t\n            {#each stores as {name, address}, i}\n\t\t\t    <tr on:click={() => sayId(i)}> \n                    <td>{i}</td>\n                    <td>{name}</td> \n\t\t\t\t    <td>{address}</td> \n\t\t\t    </tr>\n\t\t    {/each}\n\t</table>\n\n<style>\n\ttable, th, td {\n\t\tborder: 1px solid black;\n        border-collapse: collapse;\n        padding: 5px;\n\t}\n</style>\n"
+  ],
+  "names": [],
+  "mappings": "AA8BC,mBAAK,CAAE,gBAAE,CAAE,EAAE,cAAC,CAAC,AACd,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,CACjB,eAAe,CAAE,QAAQ,CACzB,OAAO,CAAE,GAAG,AACnB,CAAC"
+}
