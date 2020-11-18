@@ -393,7 +393,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (21:12) {#each stores as {name, address}
+    // (23:12) {#each stores as {name, address}
     function create_each_block(ctx) {
     	let tr;
     	let td0;
@@ -426,13 +426,13 @@ var app = (function () {
     			td2 = element("td");
     			t4 = text(t4_value);
     			t5 = space();
-    			attr_dev(td0, "class", "svelte-k863ma");
-    			add_location(td0, file, 22, 20, 458);
-    			attr_dev(td1, "class", "svelte-k863ma");
-    			add_location(td1, file, 23, 20, 491);
-    			attr_dev(td2, "class", "svelte-k863ma");
-    			add_location(td2, file, 24, 8, 516);
-    			add_location(tr, file, 21, 7, 406);
+    			attr_dev(td0, "class", "svelte-19bjyo7");
+    			add_location(td0, file, 24, 20, 534);
+    			attr_dev(td1, "class", "svelte-19bjyo7");
+    			add_location(td1, file, 25, 20, 567);
+    			attr_dev(td2, "class", "svelte-19bjyo7");
+    			add_location(td2, file, 26, 8, 592);
+    			add_location(tr, file, 23, 7, 482);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, tr, anchor);
@@ -467,7 +467,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(21:12) {#each stores as {name, address}",
+    		source: "(23:12) {#each stores as {name, address}",
     		ctx
     	});
 
@@ -476,6 +476,7 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let table;
+    	let thead;
     	let tr;
     	let th0;
     	let t1;
@@ -483,6 +484,7 @@ var app = (function () {
     	let t3;
     	let th2;
     	let t5;
+    	let tbody;
     	let each_value = /*stores*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -494,6 +496,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			table = element("table");
+    			thead = element("thead");
     			tr = element("tr");
     			th0 = element("th");
     			th0.textContent = "ID";
@@ -504,19 +507,23 @@ var app = (function () {
     			th2 = element("th");
     			th2.textContent = "Address";
     			t5 = space();
+    			tbody = element("tbody");
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(th0, "class", "svelte-k863ma");
-    			add_location(th0, file, 15, 16, 253);
-    			attr_dev(th1, "class", "svelte-k863ma");
-    			add_location(th1, file, 16, 16, 281);
-    			attr_dev(th2, "class", "svelte-k863ma");
-    			add_location(th2, file, 17, 16, 312);
-    			add_location(tr, file, 14, 3, 232);
-    			attr_dev(table, "class", "svelte-k863ma");
+    			attr_dev(th0, "class", "svelte-19bjyo7");
+    			add_location(th0, file, 16, 16, 299);
+    			attr_dev(th1, "class", "svelte-19bjyo7");
+    			add_location(th1, file, 17, 16, 327);
+    			attr_dev(th2, "class", "svelte-19bjyo7");
+    			add_location(th2, file, 18, 16, 358);
+    			add_location(tr, file, 15, 12, 278);
+    			attr_dev(thead, "class", "svelte-19bjyo7");
+    			add_location(thead, file, 14, 8, 257);
+    			add_location(tbody, file, 21, 8, 418);
+    			attr_dev(table, "class", "customTable svelte-19bjyo7");
     			add_location(table, file, 13, 4, 221);
     		},
     		l: function claim(nodes) {
@@ -524,16 +531,18 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, table, anchor);
-    			append_dev(table, tr);
+    			append_dev(table, thead);
+    			append_dev(thead, tr);
     			append_dev(tr, th0);
     			append_dev(tr, t1);
     			append_dev(tr, th1);
     			append_dev(tr, t3);
     			append_dev(tr, th2);
     			append_dev(table, t5);
+    			append_dev(table, tbody);
 
     			for (let i = 0; i < each_blocks.length; i += 1) {
-    				each_blocks[i].m(table, null);
+    				each_blocks[i].m(tbody, null);
     			}
     		},
     		p: function update(ctx, [dirty]) {
@@ -550,7 +559,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(table, null);
+    						each_blocks[i].m(tbody, null);
     					}
     				}
 
@@ -655,6 +664,7 @@ var app = (function () {
     		c: function create() {
     			button = element("button");
     			button.textContent = "Add Store";
+    			attr_dev(button, "class", "svelte-1v2ss0e");
     			add_location(button, file$1, 52, 4, 1261);
     		},
     		m: function mount(target, anchor) {
@@ -699,7 +709,9 @@ var app = (function () {
     			t1 = space();
     			button1 = element("button");
     			button1.textContent = "Cancel";
+    			attr_dev(button0, "class", "svelte-1v2ss0e");
     			add_location(button0, file$1, 49, 16, 1135);
+    			attr_dev(button1, "class", "svelte-1v2ss0e");
     			add_location(button1, file$1, 50, 4, 1192);
     		},
     		m: function mount(target, anchor) {
@@ -745,6 +757,7 @@ var app = (function () {
     		c: function create() {
     			h4 = element("h4");
     			h4.textContent = "No Store Selected";
+    			attr_dev(h4, "class", "svelte-1v2ss0e");
     			add_location(h4, file$1, 61, 8, 1576);
     		},
     		m: function mount(target, anchor) {
@@ -790,8 +803,11 @@ var app = (function () {
     			t4 = space();
     			button1 = element("button");
     			button1.textContent = "Remove";
+    			attr_dev(h4, "class", "svelte-1v2ss0e");
     			add_location(h4, file$1, 57, 8, 1391);
+    			attr_dev(button0, "class", "svelte-1v2ss0e");
     			add_location(button0, file$1, 58, 8, 1442);
+    			attr_dev(button1, "class", "svelte-1v2ss0e");
     			add_location(button1, file$1, 59, 8, 1501);
     		},
     		m: function mount(target, anchor) {
@@ -838,7 +854,7 @@ var app = (function () {
     }
 
     function create_fragment$1(ctx) {
-    	let main;
+    	let body;
     	let div;
     	let input0;
     	let t0;
@@ -878,7 +894,7 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			main = element("main");
+    			body = element("body");
     			div = element("div");
     			input0 = element("input");
     			t0 = space();
@@ -893,20 +909,25 @@ var app = (function () {
     			create_component(table.$$.fragment);
     			attr_dev(input0, "type", "text");
     			attr_dev(input0, "placeholder", "Store's name");
+    			attr_dev(input0, "class", "svelte-1v2ss0e");
     			add_location(input0, file$1, 45, 5, 945);
     			attr_dev(input1, "type", "text");
     			attr_dev(input1, "placeholder", "Store's address");
+    			attr_dev(input1, "class", "svelte-1v2ss0e");
     			add_location(input1, file$1, 46, 3, 1020);
+    			attr_dev(div, "class", "svelte-1v2ss0e");
     			add_location(div, file$1, 44, 1, 934);
+    			attr_dev(hr, "class", "svelte-1v2ss0e");
     			add_location(hr, file$1, 55, 1, 1334);
-    			add_location(main, file$1, 43, 0, 926);
+    			attr_dev(body, "class", "svelte-1v2ss0e");
+    			add_location(body, file$1, 43, 0, 926);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, main, anchor);
-    			append_dev(main, div);
+    			insert_dev(target, body, anchor);
+    			append_dev(body, div);
     			append_dev(div, input0);
     			set_input_value(input0, /*store*/ ctx[0].name);
     			append_dev(div, t0);
@@ -914,12 +935,12 @@ var app = (function () {
     			set_input_value(input1, /*store*/ ctx[0].address);
     			append_dev(div, t1);
     			if_block0.m(div, null);
-    			append_dev(main, t2);
-    			append_dev(main, hr);
-    			append_dev(main, t3);
-    			if_block1.m(main, null);
-    			append_dev(main, t4);
-    			mount_component(table, main, null);
+    			append_dev(body, t2);
+    			append_dev(body, hr);
+    			append_dev(body, t3);
+    			if_block1.m(body, null);
+    			append_dev(body, t4);
+    			mount_component(table, body, null);
     			current = true;
 
     			if (!mounted) {
@@ -960,7 +981,7 @@ var app = (function () {
 
     				if (if_block1) {
     					if_block1.c();
-    					if_block1.m(main, t4);
+    					if_block1.m(body, t4);
     				}
     			}
 
@@ -978,7 +999,7 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(main);
+    			if (detaching) detach_dev(body);
     			if_block0.d();
     			if_block1.d();
     			destroy_component(table);

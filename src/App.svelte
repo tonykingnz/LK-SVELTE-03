@@ -41,7 +41,7 @@
 	}
 </script>
 
-<main>
+<body>
 	<div>
 	    <input type="text" bind:value={store.name} placeholder="Store's name"> 
 			<input type="text" bind:value={store.address} placeholder="Store's address"> 
@@ -63,4 +63,44 @@
     {/if}
 
 	<Table {stores} on:message={handleMessage}/>
-</main>
+</body>
+
+<style>
+    input,
+    textarea {
+        color: #0f0f0f;
+        display: block;
+        width: 100%;
+        font: inherit;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        border-radius: 3px 3px 0 0;
+        background-color: #55b9f3;
+        padding: 0.15rem 0.25rem;
+        transition: border-color 0.1s ease-out;
+        outline:solid 1px black;
+    }
+    input:focus, textarea:focus{
+        outline:solid 1px blue;
+    }
+    
+    ::placeholder {
+        color: #5b5b5b;
+    }
+    button {
+        border-color: #0f0f0f;
+        border-radius: 20px;
+        background: linear-gradient(145deg, #4da7db, #5bc6ff);
+        box-shadow:  10px 10px 20px #489dcf,
+             -10px -10px 20px #62d5ff;
+    }
+    body {
+        border: none;
+        background-color: #55b9f3;
+    }
+    hr {
+        height: 1px;
+        border: none;
+        background-color: #0f0f0f;
+    }
+</style>
